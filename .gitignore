@@ -1,0 +1,26 @@
+# Vivado generated files
+*.jou
+*.log
+*.str
+.Xil/
+*.xsa
+*.bit
+*.ltx
+xsim.dir/
+vivado_*.backup.jou
+vivado_*.backup.log
+
+# OpenROAD outputs
+results/*.gds
+results/*.def
+results/*.spef
+syn/results/
+pnr/results/
+
+# Python
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store
+Thumbs.db
