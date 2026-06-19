@@ -1,4 +1,4 @@
-cat > README.md << 'EOF'
+ 
 # SparseFlow — Sparse-Aware AI Compute Engine
 
 > Full RTL-to-GDS2 ASIC accelerator for sparse matrix multiply
