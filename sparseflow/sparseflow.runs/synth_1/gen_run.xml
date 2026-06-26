@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1781857973">
-  <File Type="PA-TCL" Name="sparseflow_top.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="sparseflow_top_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="sparseflow_top_reports.tcl"/>
-  <File Type="RDS-RDS" Name="sparseflow_top.vds"/>
   <File Type="RDS-UTIL" Name="sparseflow_top_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="sparseflow_top_utilization_synth.pb"/>
+  <File Type="PA-TCL" Name="sparseflow_top.tcl"/>
+  <File Type="RDS-RDS" Name="sparseflow_top.vds"/>
   <File Type="RDS-DCP" Name="sparseflow_top.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="sparseflow_top_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="sparseflow_top_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PPRDIR/../rtl/sparseflow_pkg.sv">

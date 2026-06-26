@@ -1,4 +1,5 @@
  
+ 
 // ============================================================
 // tb_sparseflow_top.sv
 // SparseFlow - Minimal directed testbench
@@ -7,6 +8,10 @@
 // crashing. This is NOT the UVM environment (that's Week 3).
 // This sets clk/rst_n, fires a basic start pulse, and lets
 // the FSM walk through states so we can see waveforms.
+//
+// UPDATE: Added CTRL=0 acknowledgment at the end so we can
+// verify the FSM correctly returns from ST_DONE to ST_IDLE,
+// instead of leaving it parked in DONE forever.
 // ============================================================
 
 import sparseflow_pkg::*;
@@ -125,7 +130,19 @@ module tb_sparseflow_top;
 
     $display("T=%0t : busy=%0d done_irq=%0d", $time, busy, done_irq);
 
-    repeat (20) @(posedge clk);
+    // ------------------------------------------------------
+    // ACK the done status: host writes CTRL=0 to clear start.
+    // Without this, the FSM stays parked in ST_DONE forever,
+    // since the FSM only leaves ST_DONE when reg_ctrl[0]==0.
+    // ------------------------------------------------------
+    axi_write(REG_CTRL, 32'h0);
+    $display("T=%0t : Host acked done (wrote CTRL=0)", $time);
+
+    repeat (10) @(posedge clk);
+    $display("T=%0t : busy=%0d done_irq=%0d (should both be 0 now)",
+              $time, busy, done_irq);
+
+    repeat (10) @(posedge clk);
 
     $display("T=%0t : Simulation finished", $time);
     $finish;
