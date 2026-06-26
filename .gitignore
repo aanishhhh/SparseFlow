@@ -1,4 +1,7 @@
-# Vivado generated files
+# ============================================================
+# Vivado Generated Files
+# ============================================================
+
 *.jou
 *.log
 *.str
@@ -10,17 +13,39 @@ xsim.dir/
 vivado_*.backup.jou
 vivado_*.backup.log
 
-# OpenROAD outputs
+# Vivado project files
+*.pb
+*.wdb
+*.xpr
+
+# Vivado project directories
+sparseflow/.Xil/
+sparseflow/sparseflow.cache/
+sparseflow/sparseflow.hw/
+sparseflow/sparseflow.ip_user_files/
+sparseflow/sparseflow.runs/
+sparseflow/sparseflow.sim/
+
+# ============================================================
+# OpenROAD Outputs
+# ============================================================
+
 results/*.gds
 results/*.def
 results/*.spef
 syn/results/
 pnr/results/
 
+# ============================================================
 # Python
+# ============================================================
+
 __pycache__/
 *.pyc
 
-# OS
+# ============================================================
+# Operating System
+# ============================================================
+
 .DS_Store
 Thumbs.db
