@@ -42,7 +42,7 @@ proportionally to sparsity.
 ## Build status
 
 - [x] Week 1 — Architecture spec + parameter package
-- [ ] Week 2 — Full RTL (5 modules)
+- [x] Week 2 — Full RTL (5 modules)
 - [ ] Week 3 — UVM environment skeleton
 - [ ] Week 4 — Scoreboard + coverage closure
 - [ ] Week 5 — Formal verification
