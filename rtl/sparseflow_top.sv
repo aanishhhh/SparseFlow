@@ -1,4 +1,3 @@
- 
 import sparseflow_pkg::*;
 
 module sparseflow_top (
@@ -55,6 +54,21 @@ module sparseflow_top (
 
   logic ob_wr_en, ob_rd_en, ob_full, ob_empty;
   logic [ACCUM_WIDTH-1:0] ob_wr_data, ob_rd_data;
+
+  // THE FIX: one-cycle-delayed version of ib_rd_en.
+  // sparse_mac registers acc_out one cycle AFTER clk_en&valid
+  // are asserted, so output_buffer must wait one extra cycle
+  // before capturing mac_acc_out[], otherwise it captures the
+  // stale (zero) value from before the MACs finished.
+  logic ib_rd_en_d1;
+
+  always_ff @(posedge clk or negedge rst_n) begin
+    if (!rst_n) begin
+      ib_rd_en_d1 <= 1'b0;
+    end else begin
+      ib_rd_en_d1 <= ib_rd_en;
+    end
+  end
 
   always_ff @(posedge clk or negedge rst_n) begin
     if (!rst_n) begin
@@ -142,7 +156,10 @@ module sparseflow_top (
         if (row_count >= reg_matrix_rows) next_state = ST_COMPUTE;
       end
       ST_COMPUTE: begin
-        if (ib_empty) next_state = ST_WRITEBACK;
+        // FIX: also wait for ib_rd_en_d1 to clear, so we don't
+        // leave COMPUTE before the last row's MAC result has
+        // actually been latched.
+        if (ib_empty && !ib_rd_en && !ib_rd_en_d1) next_state = ST_WRITEBACK;
       end
       ST_WRITEBACK: begin
         if (ob_empty) next_state = ST_DONE;
@@ -240,7 +257,11 @@ module sparseflow_top (
   );
 
   assign ob_wr_data = row_result;
-  assign ob_wr_en   = ib_rd_en && !ob_full;
+
+  // THE FIX: ob_wr_en now triggers off ib_rd_en_d1 (delayed
+  // by one cycle), not ib_rd_en directly. This is the actual
+  // bug fix that was missing from the file this whole time.
+  assign ob_wr_en   = ib_rd_en_d1 && !ob_full;
   assign ob_rd_en   = (state == ST_WRITEBACK) && !ob_empty;
 
   always_ff @(posedge clk or negedge rst_n) begin

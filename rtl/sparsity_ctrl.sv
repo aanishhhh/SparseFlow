@@ -1,15 +1,18 @@
 // ============================================================
 // sparsity_ctrl.sv
-// SparseFlow — Sparsity Control Unit
+// SparseFlow - Sparsity Control Unit
 //
-// THE NOVEL BLOCK. Takes the raw 64-bit sparsity bitmap and:
-//   1. Registers it cleanly to drive mac_en[63:0]
-//      (one clock-enable signal per MAC cell)
-//   2. Counts how many MACs are being skipped this cycle
-//      (feeds the PERF_SKIPPED performance counter)
+// FIX: mac_en was registered (1-cycle delayed from bitmap),
+// but valid/data signals reach sparse_mac COMBINATIONALLY in
+// the same cycle. This 1-cycle misalignment meant mac_en was
+// always stale-zero on the one cycle valid=1, so every MAC
+// was clock-gated off and results were always 0.
 //
-// This is the hardware mechanism that turns "70% sparsity"
-// into "70% fewer MACs switching" -> real power savings.
+// Made mac_en combinational so it aligns with valid/data in
+// the same cycle. bitmap itself comes from input_buffer's
+// registered rd_data, so there is no glitch risk - bitmap
+// only changes once per row, synchronized to the same clock
+// edge as everything else upstream.
 // ============================================================
 
 import sparseflow_pkg::*;
@@ -17,71 +20,33 @@ import sparseflow_pkg::*;
 module sparsity_ctrl (
   input  logic                        clk,
   input  logic                        rst_n,
-
-  // Raw bitmap coming from the input buffer / host registers.
-  // bit[i] = 1 -> MAC i has a non-zero operand, must compute
-  // bit[i] = 0 -> MAC i operand is zero, skip it (gate clock)
   input  logic [BITMAP_WIDTH-1:0]     bitmap,
-
-  // row_valid = 1 means "bitmap holds real data this cycle"
-  // We only update mac_en when a new valid row is presented.
   input  logic                        row_valid,
-
-  // Registered, glitch-free clock-enable for each of the
-  // 64 MAC cells. This wire goes directly to each
-  // sparse_mac instance's clk_en input.
   output logic [NUM_MACS-1:0]         mac_en,
-
-  // How many MACs were skipped (zero bits) in the CURRENT
-  // mac_en output. Range: 0 to 64, so needs 7 bits.
   output logic [SKIP_CNT_WIDTH-1:0]   skip_count
 );
 
   // ----------------------------------------------------------
-  // Registering the bitmap into mac_en
-  // ----------------------------------------------------------
-  // Why register instead of direct combinational wiring?
+  // mac_en is now COMBINATIONAL, directly following bitmap
+  // whenever row_valid is high. This aligns with how `valid`
+  // (ib_rd_en) reaches sparse_mac in the same cycle - both
+  // see the same row's data and bitmap together, same cycle.
   //
-  // If bitmap changed mid-cycle due to upstream timing skew,
-  // a directly-wired clk_en could glitch — meaning a MAC cell
-  // might see clk_en flicker high-low-high within one cycle.
-  // Glitches on a clock-enable line are a classic source of
-  // real silicon bugs (false triggering, metastability risk).
-  //
-  // By registering here, mac_en only ever changes cleanly on
-  // the clock edge, synchronized with every other register in
-  // the design. This is standard practice for any enable signal
-  // that fans out to many destinations (here: 64 MAC cells).
+  // When row_valid=0, mac_en holds at all-zero (safe default,
+  // no MAC accidentally enabled when there's no real row).
   // ----------------------------------------------------------
-  always_ff @(posedge clk or negedge rst_n) begin
-    if (!rst_n) begin
-      mac_en <= '0;   // reset: all MACs disabled, safe default
-    end else if (row_valid) begin
-      mac_en <= bitmap;  // new row arrived, update enables
+  always_comb begin
+    if (row_valid) begin
+      mac_en = bitmap;
+    end else begin
+      mac_en = '0;
     end
-    // else: row_valid=0 -> mac_en holds previous value
-    // (this matters during LOAD/WRITEBACK FSM states when
-    //  no new row is being fed to the MAC array)
   end
 
   // ----------------------------------------------------------
-  // Skip counter — population count of ZERO bits
-  // ----------------------------------------------------------
-  // We count how many bits in mac_en are 0 (skipped MACs).
-  //
-  // This is a "population count" (popcount) operation, just
-  // counting zeros instead of ones. We write it as a simple
-  // for-loop inside always_comb. This is NOT a literal 64-input
-  // loop in hardware — the synthesis tool (Yosys, Week 6) will
-  // automatically convert this into an efficient binary adder
-  // tree (think: a tournament bracket of small adders).
-  //
-  // Why combinational (always_comb) instead of registered?
-  // skip_count describes mac_en, which is already a registered
-  // signal. Computing the count combinationally from the
-  // already-stable mac_en avoids one extra cycle of latency —
-  // the host can read PERF_SKIPPED in the same cycle mac_en
-  // is valid.
+  // Skip counter - population count of ZERO bits in mac_en.
+  // Still combinational, now correctly reflects the SAME
+  // cycle's mac_en rather than a stale previous value.
   // ----------------------------------------------------------
   always_comb begin
     automatic int zero_count;
