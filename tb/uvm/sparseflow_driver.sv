@@ -1,4 +1,4 @@
-// ============================================================
+// =======================================================
 // sparseflow_driver.sv
 // SparseFlow - UVM driver
 //
@@ -6,7 +6,7 @@
 // the sequencer and performs the actual AXI4-Lite handshake
 // on the interface - the same logic as the axi_write/axi_read
 // tasks from the Week 2 directed testbench, now reusable.
-// ============================================================
+// =======================================================
 
 `include "uvm_macros.svh"
 import uvm_pkg::*;
