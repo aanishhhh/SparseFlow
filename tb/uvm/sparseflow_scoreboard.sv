@@ -1,3 +1,5 @@
+`ifndef SPARSEFLOW_SCOREBOARD_SV
+`define SPARSEFLOW_SCOREBOARD_SV
 // ============================================================
 // sparseflow_scoreboard.sv
 // SparseFlow - UVM scoreboard
@@ -123,3 +125,4 @@ class sparseflow_scoreboard extends uvm_scoreboard;
   endfunction
 
 endclass : sparseflow_scoreboard
+`endif

@@ -1,3 +1,5 @@
+`ifndef SPARSEFLOW_ENV_SV
+`define SPARSEFLOW_ENV_SV
 // ============================================================
 // sparseflow_env.sv
 // SparseFlow - UVM environment
@@ -41,3 +43,4 @@ class sparseflow_env extends uvm_env;
   endfunction
 
 endclass : sparseflow_env
+`endif

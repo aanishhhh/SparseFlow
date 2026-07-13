@@ -1,3 +1,5 @@
+`ifndef SPARSEFLOW_SEQUENCER_SV
+`define SPARSEFLOW_SEQUENCER_SV
 // ============================================================
 // sparseflow_sequencer.sv
 // SparseFlow - UVM sequencer
@@ -20,3 +22,4 @@ class sparseflow_sequencer extends uvm_sequencer #(sparseflow_seq_item);
   endfunction
 
 endclass : sparseflow_sequencer
+`endif

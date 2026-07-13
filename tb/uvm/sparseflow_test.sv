@@ -2,13 +2,25 @@
 // sparseflow_test.sv
 // SparseFlow - top-level UVM test
 //
-// Creates the environment, then in run_phase builds and runs
-// our base sequence on the agent's sequencer. This is the
-// entry point UVM actually invokes when simulation starts.
+// FIX: this file references sparseflow_env and
+// sparseflow_base_seq, but those classes live in separate
+// files. Without packages, SystemVerilog classes in different
+// files need explicit `include to see each other - just being
+// compiled in the same simulation isn't enough.
 // ============================================================
 
 `include "uvm_macros.svh"
 import uvm_pkg::*;
+
+`include "sparseflow_seq_item.sv"
+`include "sparseflow_if.sv"
+`include "sparseflow_driver.sv"
+`include "sparseflow_monitor.sv"
+`include "sparseflow_sequencer.sv"
+`include "sparseflow_agent.sv"
+`include "sparseflow_scoreboard.sv"
+`include "sparseflow_env.sv"
+`include "sparseflow_base_seq.sv"
 
 class sparseflow_test extends uvm_test;
 
@@ -25,16 +37,6 @@ class sparseflow_test extends uvm_test;
     env = sparseflow_env::type_id::create("env", this);
   endfunction
 
-  // ----------------------------------------------------------
-  // run_phase: raise an objection (tells UVM "don't end the
-  // simulation yet, I'm still doing something important"),
-  // run our sequence on the sequencer, then drop the
-  // objection (tells UVM "I'm done, safe to finish now").
-  //
-  // Without raise/drop_objection, UVM's run_phase would
-  // complete instantly since nothing else blocks it, and our
-  // sequence would never actually get a chance to run.
-  // ----------------------------------------------------------
   task run_phase(uvm_phase phase);
     sparseflow_base_seq seq;
     phase.raise_objection(this);

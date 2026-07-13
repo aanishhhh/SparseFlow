@@ -1,3 +1,5 @@
+`ifndef SPARSEFLOW_SEQ_ITEM_SV
+`define SPARSEFLOW_SEQ_ITEM_SV
 // ============================================================
 // sparseflow_seq_item.sv
 // SparseFlow - UVM sequence item (transaction)
@@ -39,3 +41,4 @@ class sparseflow_seq_item extends uvm_sequence_item;
   }
 
 endclass : sparseflow_seq_item
+`endif

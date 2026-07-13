@@ -1,3 +1,5 @@
+`ifndef SPARSEFLOW_MONITOR_SV
+`define SPARSEFLOW_MONITOR_SV
 // ============================================================
 // sparseflow_monitor.sv
 // SparseFlow - UVM monitor
@@ -79,3 +81,4 @@ class sparseflow_monitor extends uvm_monitor;
   endtask
 
 endclass : sparseflow_monitor
+`endif

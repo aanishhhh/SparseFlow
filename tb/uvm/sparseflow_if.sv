@@ -1,20 +1,24 @@
+`ifndef SPARSEFLOW_IF_SV
+`define SPARSEFLOW_IF_SV
 // ============================================================
 // sparseflow_if.sv
 // SparseFlow - AXI4-Lite interface bundle for UVM
 //
-// PURPOSE: Bundles all 16 AXI4-Lite signals into one handle.
-// Instead of the driver, monitor, and DUT each needing 16
-// separate port connections, they all just connect to "the
-// interface" and access signals as if.signal_name.
-//
-// This also lets us add clocking blocks later if we need
-// precise timing control, without touching every module that
-// uses the interface.
+// FIX: clk/rst_n were declared as interface PORTS, which on
+// some simulators (including Vivado XSim in this case) don't
+// reliably trigger @(posedge vif.clk) from inside class-based
+// code (driver/monitor). Changed to plain internal logic
+// signals instead - the testbench top now drives vif.clk and
+// vif.rst_n directly, same simple pattern as our Week 2
+// directed testbench used successfully.
 // ============================================================
 
 import sparseflow_pkg::*;
 
-interface sparseflow_if (input logic clk, input logic rst_n);
+interface sparseflow_if;
+
+  logic clk;
+  logic rst_n;
 
   logic [7:0]   s_axi_awaddr;
   logic         s_axi_awvalid;
@@ -36,3 +40,4 @@ interface sparseflow_if (input logic clk, input logic rst_n);
   logic         busy;
 
 endinterface : sparseflow_if
+`endif

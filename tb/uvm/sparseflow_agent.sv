@@ -1,3 +1,5 @@
+`ifndef SPARSEFLOW_AGENT_SV
+`define SPARSEFLOW_AGENT_SV
 // ============================================================
 // sparseflow_agent.sv
 // SparseFlow - UVM agent
@@ -53,3 +55,4 @@ class sparseflow_agent extends uvm_agent;
   endfunction
 
 endclass : sparseflow_agent
+`endif
