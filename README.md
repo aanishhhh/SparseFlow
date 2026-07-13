@@ -43,7 +43,7 @@ proportionally to sparsity.
 
 - [x] Week 1 — Architecture spec + parameter package
 - [x] Week 2 — Full RTL (5 modules)
-- [ ] Week 3 — UVM environment skeleton
+- [x] Week 3 — UVM environment skeleton
 - [ ] Week 4 — Scoreboard + coverage closure
 - [ ] Week 5 — Formal verification
 - [ ] Week 6 — Synthesis + static timing
