@@ -1,10 +1,5 @@
-`ifndef SPARSEFLOW_ENV_SV
-`define SPARSEFLOW_ENV_SV
-
 `include "uvm_macros.svh"
 import uvm_pkg::*;
-
-`include "sparseflow_coverage.sv"
 
 class sparseflow_env extends uvm_env;
 
@@ -33,4 +28,3 @@ class sparseflow_env extends uvm_env;
   endfunction
 
 endclass : sparseflow_env
-`endif

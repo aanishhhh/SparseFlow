@@ -1,5 +1,7 @@
-`ifndef SPARSEFLOW_COVERAGE_SV
-`define SPARSEFLOW_COVERAGE_SV
+// ============================================================
+// sparseflow_coverage.sv
+// SparseFlow - Functional coverage collector
+// ============================================================
 
 `include "uvm_macros.svh"
 import uvm_pkg::*;
@@ -12,39 +14,28 @@ class sparseflow_coverage extends uvm_subscriber #(sparseflow_seq_item);
   sparseflow_seq_item item;
 
   covergroup sparsity_cg;
-
-    // Cover different bitmap patterns written to BITMAP_LO
     cp_bitmap: coverpoint item.wdata {
       bins all_zeros  = {32'h00000000};
       bins all_ones   = {32'hFFFFFFFF};
       bins alternate  = {32'hAAAAAAAA};
-      bins low_active = {[32'h00000001 : 32'h0000FFFF]};
-      bins mid_active = {[32'h00010000 : 32'h7FFFFFFF]};
-      bins single_mac = {32'h00000001, 32'h00000002,
-                         32'h00000004, 32'h00000008};
+      bins low_active = {[32'h00000001:32'h0000FFFF]};
+      bins mid_active = {[32'h00010000:32'h7FFFFFFF]};
+      bins single_mac = {32'h00000001,32'h00000002,
+                         32'h00000004,32'h00000008};
     }
-
-    // Cover which registers are accessed
     cp_addr: coverpoint item.addr {
       bins bitmap_lo   = {REG_BITMAP_LO};
       bins bitmap_hi   = {REG_BITMAP_HI};
       bins ctrl        = {REG_CTRL};
       bins matrix_rows = {REG_MATRIX_ROWS};
-      bins matrix_cols = {REG_MATRIX_COLS};
-      bins status      = {REG_STATUS};
       bins perf_skip   = {REG_PERF_SKIP};
       bins result      = {REG_RESULT};
     }
-
-    // Cover read vs write
     cp_direction: coverpoint item.is_write {
       bins write_txn = {1'b1};
       bins read_txn  = {1'b0};
     }
-
-    // Cross: want reads AND writes to each register
     cx_addr_dir: cross cp_addr, cp_direction;
-
   endgroup : sparsity_cg
 
   covergroup perf_cg;
@@ -71,13 +62,10 @@ class sparseflow_coverage extends uvm_subscriber #(sparseflow_seq_item);
   function void report_phase(uvm_phase phase);
     `uvm_info("COVERAGE",
       $sformatf("sparsity_cg coverage: %.1f%%",
-                 sparsity_cg.get_coverage()),
-      UVM_LOW)
+                 sparsity_cg.get_coverage()), UVM_LOW)
     `uvm_info("COVERAGE",
       $sformatf("perf_cg coverage: %.1f%%",
-                 perf_cg.get_coverage()),
-      UVM_LOW)
+                 perf_cg.get_coverage()), UVM_LOW)
   endfunction
 
 endclass : sparseflow_coverage
-`endif

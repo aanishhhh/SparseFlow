@@ -2,6 +2,18 @@
 import uvm_pkg::*;
 import sparseflow_pkg::*;
 
+`include "sparseflow_seq_item.sv"
+`include "sparseflow_if.sv"
+`include "sparseflow_driver.sv"
+`include "sparseflow_monitor.sv"
+`include "sparseflow_sequencer.sv"
+`include "sparseflow_agent.sv"
+`include "sparseflow_scoreboard.sv"
+`include "sparseflow_coverage.sv"
+`include "sparseflow_env.sv"
+`include "sparseflow_base_seq.sv"
+`include "sparseflow_test.sv"
+
 module tb_uvm_top;
 
   logic clk;
@@ -63,8 +75,8 @@ module tb_uvm_top;
   end
 
   sparseflow_if vif();
-  assign vif.clk          = clk;
-  assign vif.rst_n        = rst_n;
+  assign vif.clk           = clk;
+  assign vif.rst_n         = rst_n;
   assign vif.s_axi_awready = s_axi_awready;
   assign vif.s_axi_wready  = s_axi_wready;
   assign vif.s_axi_bresp   = s_axi_bresp;
@@ -74,19 +86,17 @@ module tb_uvm_top;
   assign vif.s_axi_rvalid  = s_axi_rvalid;
   assign vif.done_irq      = done_irq;
   assign vif.busy          = busy;
-
-  assign s_axi_awaddr  = vif.s_axi_awaddr;
-  assign s_axi_awvalid = vif.s_axi_awvalid;
-  assign s_axi_wdata   = vif.s_axi_wdata;
-  assign s_axi_wvalid  = vif.s_axi_wvalid;
-  assign s_axi_bready  = vif.s_axi_bready;
-  assign s_axi_araddr  = vif.s_axi_araddr;
-  assign s_axi_arvalid = vif.s_axi_arvalid;
-  assign s_axi_rready  = vif.s_axi_rready;
+  assign s_axi_awaddr      = vif.s_axi_awaddr;
+  assign s_axi_awvalid     = vif.s_axi_awvalid;
+  assign s_axi_wdata       = vif.s_axi_wdata;
+  assign s_axi_wvalid      = vif.s_axi_wvalid;
+  assign s_axi_bready      = vif.s_axi_bready;
+  assign s_axi_araddr      = vif.s_axi_araddr;
+  assign s_axi_arvalid     = vif.s_axi_arvalid;
+  assign s_axi_rready      = vif.s_axi_rready;
 
   initial begin
-    uvm_config_db#(virtual sparseflow_if)::set(
-      null, "*", "vif", vif);
+    uvm_config_db#(virtual sparseflow_if)::set(null, "*", "vif", vif);
     run_test("sparseflow_test");
   end
 

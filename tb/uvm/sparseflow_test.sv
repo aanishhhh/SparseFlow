@@ -1,5 +1,6 @@
 `include "uvm_macros.svh"
 import uvm_pkg::*;
+import sparseflow_pkg::*;
 
 `include "sparseflow_seq_item.sv"
 `include "sparseflow_if.sv"
