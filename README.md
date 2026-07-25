@@ -45,7 +45,7 @@ proportionally to sparsity.
 - [x] Week 2 — Full RTL (5 modules)
 - [x] Week 3 — UVM environment skeleton
 - [x] Week 4 — Scoreboard + coverage closure
-- [ ] Week 5 — Formal verification
+- [x] Week 5 — Formal verification
 - [ ] Week 6 — Synthesis + static timing
 - [ ] Week 7 — Place and route to GDS2
 - [ ] Week 8 — Sign-off + benchmarks + report
