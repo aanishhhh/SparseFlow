@@ -46,7 +46,7 @@ proportionally to sparsity.
 - [x] Week 3 — UVM environment skeleton
 - [x] Week 4 — Scoreboard + coverage closure
 - [x] Week 5 — Formal verification
-- [ ] Week 6 — Synthesis + static timing
+- [x] Week 6 — Synthesis + static timing
 - [ ] Week 7 — Place and route to GDS2
 - [ ] Week 8 — Sign-off + benchmarks + report
 
