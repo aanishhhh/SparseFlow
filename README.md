@@ -131,3 +131,19 @@ Coverage groups defined in `tb/uvm/sparseflow_coverage.sv`:
 > Note: UVM environment and coverage collector are fully written
 > and architecturally correct in `tb/uvm/`. Coverage simulation
 > uses Vivado XSim UVM 1.2 library.
+
+## Synthesis Results (Week 6)
+
+**Tool:** Yosys 0.64 | **Target:** Nangate 45nm FreePDK
+
+| Metric | Value |
+|--------|-------|
+| Total standard cells | 20,917 |
+| Total chip area | 50,650 µm² |
+| Sequential area | 30,587 µm² (60.4%) |
+| Flip-flops (DFF_X1) | 6,144 |
+| Multiplexers (MUX2_X1) | 4,850 |
+| Inverters (INV_X1) | 1,794 |
+
+### Top cell types
+![Synthesis Chart](results/synthesis_chart.png)
