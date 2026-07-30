@@ -38,7 +38,7 @@ module sparseflow_top (
 
   logic start_pulse;
 
-  fsm_state_t state, next_state;
+  logic [4:0] state, next_state;
   logic [ADDR_WIDTH:0] row_count;
 
   logic                          ib_wr_en, ib_rd_en, ib_full, ib_empty;

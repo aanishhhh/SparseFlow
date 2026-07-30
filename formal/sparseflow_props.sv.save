@@ -1,0 +1,33 @@
+import sparseflow_pkg::*;
+
+module sparseflow_props (
+  input logic clk,
+  input logic rst_n,
+  input logic [BITMAP_WIDTH-1:0] bitmap,
+  input logic row_valid,
+  input logic [NUM_MACS-1:0] mac_en,
+  input logic [SKIP_CNT_WIDTH-1:0] skip_count
+);
+
+  prop_mac_en_matches_bitmap: assert property (
+    row_valid |-> (mac_en == bitmap)
+  );
+
+  prop_skip_count_bounded: assert property (
+    skip_count <= NUM_MACS
+  );
+
+  prop_reset_clears_mac_en: assert property (
+    @(posedge clk)
+^c
+
+  );
+
+  prop_mac_en_zero_when_invalid: assert property (
+  );
+
+  cover_sparsity_active: cover property (
+    row_valid && (mac_en != 0)
+  );
+
+endmodule : sparseflow_props

@@ -1,0 +1,10 @@
+# running in formal/prove/src/
+read -formal sparseflow_pkg.sv
+read -formal sparsity_ctrl.sv
+read -formal sparseflow_props.sv
+prep -top sparseflow_props
+
+hierarchy -smtcheck
+rename -witness
+write_jny -no-connections ../model/design.json
+write_rtlil ../model/design.il

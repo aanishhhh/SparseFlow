@@ -1,0 +1,17 @@
+[options]
+mode bmc
+depth 10
+
+[engines]
+smtbmc z3
+
+[script]
+read -formal sparseflow_pkg.sv
+read -formal sparsity_ctrl.sv
+read -formal sparseflow_props.sv
+prep -top sparseflow_props
+
+[files]
+rtl/sparseflow_pkg.sv
+rtl/sparsity_ctrl.sv
+formal/sparseflow_props.sv

@@ -1,0 +1,1884 @@
+{
+  "$schema": "https://raw.githubusercontent.com/YosysHQ/yosys/main/misc/jny.schema.json",
+  "generator": "Yosys 0.64 (git sha1 8449dd470, g++ 13.3.0-6ubuntu2~24.04.1 -fPIC -O3) [the-openroad-project/yosys]",
+  "version": "0.0.1",
+  "invocation": "write_jny -no-connections ../model/design.json ",
+  "features": ["attributes", "properties"],
+  "modules": [
+      {
+        "name": "sparseflow_props",
+        "cell_sorts": [
+          {
+            "type": "sparsity_ctrl",
+            "ports": [
+                {
+                  "name": "bitmap",
+                  "direction": "io",
+                  "range": [64, 0]
+                },
+                {
+                  "name": "clk",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "mac_en",
+                  "direction": "",
+                  "range": [64, 0]
+                },
+                {
+                  "name": "row_valid",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "rst_n",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "skip_count",
+                  "direction": "",
+                  "range": [7, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "dut",
+                  "attributes": {
+                    "module_not_derived": "00000000000000000000000000000001",
+                    "src": "sparseflow_props.sv:11.17-18.4"
+                  },
+                  "parameters": {
+
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$check",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "ARGS",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "EN",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "TRG",
+                  "direction": "io",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "_witness_.check_assert_sparseflow_props_sv_27_7",
+                  "attributes": {
+                    "hdlname": "_witness_ check_assert_sparseflow_props_sv_27_7",
+                    "keep": "00000000000000000000000000000001",
+                    "src": "sparseflow_props.sv:27.9-27.34"
+                  },
+                  "parameters": {
+                    "ARGS_WIDTH": "00000000000000000000000000000000",
+                    "FLAVOR": "assert",
+                    "FORMAT": true,
+                    "PRIORITY": "11111111111111111111111111111111",
+                    "TRG_ENABLE": "00000000000000000000000000000001",
+                    "TRG_POLARITY": "1",
+                    "TRG_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "_witness_.check_assert_sparseflow_props_sv_29_10",
+                  "attributes": {
+                    "hdlname": "_witness_ check_assert_sparseflow_props_sv_29_10",
+                    "keep": "00000000000000000000000000000001",
+                    "src": "sparseflow_props.sv:29.9-29.29"
+                  },
+                  "parameters": {
+                    "ARGS_WIDTH": "00000000000000000000000000000000",
+                    "FLAVOR": "assert",
+                    "FORMAT": true,
+                    "PRIORITY": "11111111111111111111111111111110",
+                    "TRG_ENABLE": "00000000000000000000000000000001",
+                    "TRG_POLARITY": "1",
+                    "TRG_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "_witness_.check_assert_sparseflow_props_sv_30_12",
+                  "attributes": {
+                    "hdlname": "_witness_ check_assert_sparseflow_props_sv_30_12",
+                    "keep": "00000000000000000000000000000001",
+                    "src": "sparseflow_props.sv:30.7-30.32"
+                  },
+                  "parameters": {
+                    "ARGS_WIDTH": "00000000000000000000000000000000",
+                    "FLAVOR": "assert",
+                    "FORMAT": true,
+                    "PRIORITY": "11111111111111111111111111111101",
+                    "TRG_ENABLE": "00000000000000000000000000000001",
+                    "TRG_POLARITY": "1",
+                    "TRG_WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$dff",
+            "ports": [
+                {
+                  "name": "CLK",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "D",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "Q",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$procdff$418",
+                  "attributes": {
+                    "src": "sparseflow_props.sv:21.3-22.33"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$mux",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "B",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "S",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$procmux$406",
+                  "attributes": {
+                    "src": "sparseflow_props.sv:25.9-25.19|sparseflow_props.sv:25.5-31.8"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$408",
+                  "attributes": {
+                    "src": "sparseflow_props.sv:28.11-28.21|sparseflow_props.sv:28.7-29.30"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$410",
+                  "attributes": {
+                    "src": "sparseflow_props.sv:25.9-25.19|sparseflow_props.sv:25.5-31.8"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$412",
+                  "attributes": {
+                    "src": "sparseflow_props.sv:26.11-26.20|sparseflow_props.sv:26.7-27.35"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$414",
+                  "attributes": {
+                    "src": "sparseflow_props.sv:25.9-25.19|sparseflow_props.sv:25.5-31.8"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$416",
+                  "attributes": {
+                    "src": "sparseflow_props.sv:22.9-22.15|sparseflow_props.sv:22.5-22.33"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$le",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [7, 0]
+                },
+                {
+                  "name": "B",
+                  "direction": "io",
+                  "range": [7, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$le$sparseflow_props.sv:30$13",
+                  "attributes": {
+                    "src": "sparseflow_props.sv:30.15-30.31"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000111",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000111",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$logic_not",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [64, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$eq$sparseflow_props.sv:29$11",
+                  "attributes": {
+                    "src": "sparseflow_props.sv:29.17-29.28"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000001000000",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$eq",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [64, 0]
+                },
+                {
+                  "name": "B",
+                  "direction": "io",
+                  "range": [64, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$eq$sparseflow_props.sv:27$8",
+                  "attributes": {
+                    "src": "sparseflow_props.sv:27.17-27.33"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000001000000",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000001000000",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          }
+        ],
+        "attributes": {
+            "keep": "00000000000000000000000000000001",
+            "hdlname": "sparseflow_props",
+            "top": "00000000000000000000000000000001",
+            "src": "sparseflow_props.sv:1.1-34.10"
+        }
+      },
+      {
+        "name": "sparsity_ctrl",
+        "cell_sorts": [
+          {
+            "type": "$mux",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [7, 0]
+                },
+                {
+                  "name": "B",
+                  "direction": "io",
+                  "range": [7, 0]
+                },
+                {
+                  "name": "S",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [7, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$procmux$212",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "sparsity_ctrl.sv:55.11-55.28|sparsity_ctrl.sv:55.7-57.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$procmux$215",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "sparsity_ctrl.sv:55.11-55.28|sparsity_ctrl.sv:55.7-57.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$procmux$218",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "sparsity_ctrl.sv:55.11-55.28|sparsity_ctrl.sv:55.7-57.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$procmux$221",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "sparsity_ctrl.sv:55.11-55.28|sparsity_ctrl.sv:55.7-57.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$procmux$224",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "sparsity_ctrl.sv:55.11-55.28|sparsity_ctrl.sv:55.7-57.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$procmux$227",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "sparsity_ctrl.sv:55.11-55.28|sparsity_ctrl.sv:55.7-57.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$procmux$230",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "sparsity_ctrl.sv:55.11-55.28|sparsity_ctrl.sv:55.7-57.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$procmux$233",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "sparsity_ctrl.sv:55.11-55.28|sparsity_ctrl.sv:55.7-57.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$procmux$236",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "sparsity_ctrl.sv:55.11-55.28|sparsity_ctrl.sv:55.7-57.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$procmux$239",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "sparsity_ctrl.sv:55.11-55.28|sparsity_ctrl.sv:55.7-57.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$procmux$242",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "sparsity_ctrl.sv:55.11-55.28|sparsity_ctrl.sv:55.7-57.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$procmux$245",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "sparsity_ctrl.sv:55.11-55.28|sparsity_ctrl.sv:55.7-57.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$procmux$248",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "sparsity_ctrl.sv:55.11-55.28|sparsity_ctrl.sv:55.7-57.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$procmux$251",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "sparsity_ctrl.sv:55.11-55.28|sparsity_ctrl.sv:55.7-57.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$procmux$254",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "sparsity_ctrl.sv:55.11-55.28|sparsity_ctrl.sv:55.7-57.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$procmux$257",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "sparsity_ctrl.sv:55.11-55.28|sparsity_ctrl.sv:55.7-57.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$procmux$260",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "sparsity_ctrl.sv:55.11-55.28|sparsity_ctrl.sv:55.7-57.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$procmux$263",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "sparsity_ctrl.sv:55.11-55.28|sparsity_ctrl.sv:55.7-57.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$procmux$266",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "sparsity_ctrl.sv:55.11-55.28|sparsity_ctrl.sv:55.7-57.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$procmux$269",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "sparsity_ctrl.sv:55.11-55.28|sparsity_ctrl.sv:55.7-57.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$procmux$272",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "sparsity_ctrl.sv:55.11-55.28|sparsity_ctrl.sv:55.7-57.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$procmux$275",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "sparsity_ctrl.sv:55.11-55.28|sparsity_ctrl.sv:55.7-57.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$procmux$278",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "sparsity_ctrl.sv:55.11-55.28|sparsity_ctrl.sv:55.7-57.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$procmux$281",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "sparsity_ctrl.sv:55.11-55.28|sparsity_ctrl.sv:55.7-57.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$procmux$284",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "sparsity_ctrl.sv:55.11-55.28|sparsity_ctrl.sv:55.7-57.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$procmux$287",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "sparsity_ctrl.sv:55.11-55.28|sparsity_ctrl.sv:55.7-57.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$procmux$290",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "sparsity_ctrl.sv:55.11-55.28|sparsity_ctrl.sv:55.7-57.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$procmux$293",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "sparsity_ctrl.sv:55.11-55.28|sparsity_ctrl.sv:55.7-57.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$procmux$296",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "sparsity_ctrl.sv:55.11-55.28|sparsity_ctrl.sv:55.7-57.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$procmux$299",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "sparsity_ctrl.sv:55.11-55.28|sparsity_ctrl.sv:55.7-57.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$procmux$302",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "sparsity_ctrl.sv:55.11-55.28|sparsity_ctrl.sv:55.7-57.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$procmux$305",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "sparsity_ctrl.sv:55.11-55.28|sparsity_ctrl.sv:55.7-57.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$procmux$308",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "sparsity_ctrl.sv:55.11-55.28|sparsity_ctrl.sv:55.7-57.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$procmux$311",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "sparsity_ctrl.sv:55.11-55.28|sparsity_ctrl.sv:55.7-57.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$procmux$314",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "sparsity_ctrl.sv:55.11-55.28|sparsity_ctrl.sv:55.7-57.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$procmux$317",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "sparsity_ctrl.sv:55.11-55.28|sparsity_ctrl.sv:55.7-57.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$procmux$320",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "sparsity_ctrl.sv:55.11-55.28|sparsity_ctrl.sv:55.7-57.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$procmux$323",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "sparsity_ctrl.sv:55.11-55.28|sparsity_ctrl.sv:55.7-57.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$procmux$326",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "sparsity_ctrl.sv:55.11-55.28|sparsity_ctrl.sv:55.7-57.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$procmux$329",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "sparsity_ctrl.sv:55.11-55.28|sparsity_ctrl.sv:55.7-57.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$procmux$332",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "sparsity_ctrl.sv:55.11-55.28|sparsity_ctrl.sv:55.7-57.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$procmux$335",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "sparsity_ctrl.sv:55.11-55.28|sparsity_ctrl.sv:55.7-57.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$procmux$338",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "sparsity_ctrl.sv:55.11-55.28|sparsity_ctrl.sv:55.7-57.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$procmux$341",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "sparsity_ctrl.sv:55.11-55.28|sparsity_ctrl.sv:55.7-57.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$procmux$344",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "sparsity_ctrl.sv:55.11-55.28|sparsity_ctrl.sv:55.7-57.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$procmux$347",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "sparsity_ctrl.sv:55.11-55.28|sparsity_ctrl.sv:55.7-57.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$procmux$350",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "sparsity_ctrl.sv:55.11-55.28|sparsity_ctrl.sv:55.7-57.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$procmux$353",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "sparsity_ctrl.sv:55.11-55.28|sparsity_ctrl.sv:55.7-57.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$procmux$356",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "sparsity_ctrl.sv:55.11-55.28|sparsity_ctrl.sv:55.7-57.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$procmux$359",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "sparsity_ctrl.sv:55.11-55.28|sparsity_ctrl.sv:55.7-57.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$procmux$362",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "sparsity_ctrl.sv:55.11-55.28|sparsity_ctrl.sv:55.7-57.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$procmux$365",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "sparsity_ctrl.sv:55.11-55.28|sparsity_ctrl.sv:55.7-57.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$procmux$368",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "sparsity_ctrl.sv:55.11-55.28|sparsity_ctrl.sv:55.7-57.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$procmux$371",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "sparsity_ctrl.sv:55.11-55.28|sparsity_ctrl.sv:55.7-57.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$procmux$374",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "sparsity_ctrl.sv:55.11-55.28|sparsity_ctrl.sv:55.7-57.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$procmux$377",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "sparsity_ctrl.sv:55.11-55.28|sparsity_ctrl.sv:55.7-57.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$procmux$380",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "sparsity_ctrl.sv:55.11-55.28|sparsity_ctrl.sv:55.7-57.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$procmux$383",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "sparsity_ctrl.sv:55.11-55.28|sparsity_ctrl.sv:55.7-57.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$procmux$386",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "sparsity_ctrl.sv:55.11-55.28|sparsity_ctrl.sv:55.7-57.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$procmux$389",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "sparsity_ctrl.sv:55.11-55.28|sparsity_ctrl.sv:55.7-57.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$procmux$392",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "sparsity_ctrl.sv:55.11-55.28|sparsity_ctrl.sv:55.7-57.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$procmux$395",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "sparsity_ctrl.sv:55.11-55.28|sparsity_ctrl.sv:55.7-57.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$procmux$398",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "sparsity_ctrl.sv:55.11-55.28|sparsity_ctrl.sv:55.7-57.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$procmux$401",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "sparsity_ctrl.sv:55.11-55.28|sparsity_ctrl.sv:55.7-57.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$404",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "sparsity_ctrl.sv:39.9-39.18|sparsity_ctrl.sv:39.5-43.8"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000001000000"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$add",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [7, 0]
+                },
+                {
+                  "name": "B",
+                  "direction": "io",
+                  "range": [2, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [7, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$add$sparsity_ctrl.sv:55$102",
+                  "attributes": {
+                    "src": "sparsity_ctrl.sv:55.35-56.21"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000001",
+                    "A_WIDTH": "00000000000000000000000000000111",
+                    "B_SIGNED": "00000000000000000000000000000001",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$add$sparsity_ctrl.sv:55$105",
+                  "attributes": {
+                    "src": "sparsity_ctrl.sv:55.35-56.21"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000001",
+                    "A_WIDTH": "00000000000000000000000000000111",
+                    "B_SIGNED": "00000000000000000000000000000001",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$add$sparsity_ctrl.sv:55$108",
+                  "attributes": {
+                    "src": "sparsity_ctrl.sv:55.35-56.21"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000001",
+                    "A_WIDTH": "00000000000000000000000000000111",
+                    "B_SIGNED": "00000000000000000000000000000001",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$add$sparsity_ctrl.sv:55$111",
+                  "attributes": {
+                    "src": "sparsity_ctrl.sv:55.35-56.21"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000001",
+                    "A_WIDTH": "00000000000000000000000000000111",
+                    "B_SIGNED": "00000000000000000000000000000001",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$add$sparsity_ctrl.sv:55$114",
+                  "attributes": {
+                    "src": "sparsity_ctrl.sv:55.35-56.21"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000001",
+                    "A_WIDTH": "00000000000000000000000000000111",
+                    "B_SIGNED": "00000000000000000000000000000001",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$add$sparsity_ctrl.sv:55$117",
+                  "attributes": {
+                    "src": "sparsity_ctrl.sv:55.35-56.21"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000001",
+                    "A_WIDTH": "00000000000000000000000000000111",
+                    "B_SIGNED": "00000000000000000000000000000001",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$add$sparsity_ctrl.sv:55$120",
+                  "attributes": {
+                    "src": "sparsity_ctrl.sv:55.35-56.21"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000001",
+                    "A_WIDTH": "00000000000000000000000000000111",
+                    "B_SIGNED": "00000000000000000000000000000001",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$add$sparsity_ctrl.sv:55$123",
+                  "attributes": {
+                    "src": "sparsity_ctrl.sv:55.35-56.21"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000001",
+                    "A_WIDTH": "00000000000000000000000000000111",
+                    "B_SIGNED": "00000000000000000000000000000001",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$add$sparsity_ctrl.sv:55$126",
+                  "attributes": {
+                    "src": "sparsity_ctrl.sv:55.35-56.21"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000001",
+                    "A_WIDTH": "00000000000000000000000000000111",
+                    "B_SIGNED": "00000000000000000000000000000001",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$add$sparsity_ctrl.sv:55$129",
+                  "attributes": {
+                    "src": "sparsity_ctrl.sv:55.35-56.21"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000001",
+                    "A_WIDTH": "00000000000000000000000000000111",
+                    "B_SIGNED": "00000000000000000000000000000001",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$add$sparsity_ctrl.sv:55$132",
+                  "attributes": {
+                    "src": "sparsity_ctrl.sv:55.35-56.21"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000001",
+                    "A_WIDTH": "00000000000000000000000000000111",
+                    "B_SIGNED": "00000000000000000000000000000001",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$add$sparsity_ctrl.sv:55$135",
+                  "attributes": {
+                    "src": "sparsity_ctrl.sv:55.35-56.21"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000001",
+                    "A_WIDTH": "00000000000000000000000000000111",
+                    "B_SIGNED": "00000000000000000000000000000001",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$add$sparsity_ctrl.sv:55$138",
+                  "attributes": {
+                    "src": "sparsity_ctrl.sv:55.35-56.21"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000001",
+                    "A_WIDTH": "00000000000000000000000000000111",
+                    "B_SIGNED": "00000000000000000000000000000001",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$add$sparsity_ctrl.sv:55$141",
+                  "attributes": {
+                    "src": "sparsity_ctrl.sv:55.35-56.21"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000001",
+                    "A_WIDTH": "00000000000000000000000000000111",
+                    "B_SIGNED": "00000000000000000000000000000001",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$add$sparsity_ctrl.sv:55$144",
+                  "attributes": {
+                    "src": "sparsity_ctrl.sv:55.35-56.21"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000001",
+                    "A_WIDTH": "00000000000000000000000000000111",
+                    "B_SIGNED": "00000000000000000000000000000001",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$add$sparsity_ctrl.sv:55$147",
+                  "attributes": {
+                    "src": "sparsity_ctrl.sv:55.35-56.21"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000001",
+                    "A_WIDTH": "00000000000000000000000000000111",
+                    "B_SIGNED": "00000000000000000000000000000001",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$add$sparsity_ctrl.sv:55$150",
+                  "attributes": {
+                    "src": "sparsity_ctrl.sv:55.35-56.21"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000001",
+                    "A_WIDTH": "00000000000000000000000000000111",
+                    "B_SIGNED": "00000000000000000000000000000001",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$add$sparsity_ctrl.sv:55$153",
+                  "attributes": {
+                    "src": "sparsity_ctrl.sv:55.35-56.21"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000001",
+                    "A_WIDTH": "00000000000000000000000000000111",
+                    "B_SIGNED": "00000000000000000000000000000001",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$add$sparsity_ctrl.sv:55$156",
+                  "attributes": {
+                    "src": "sparsity_ctrl.sv:55.35-56.21"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000001",
+                    "A_WIDTH": "00000000000000000000000000000111",
+                    "B_SIGNED": "00000000000000000000000000000001",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$add$sparsity_ctrl.sv:55$159",
+                  "attributes": {
+                    "src": "sparsity_ctrl.sv:55.35-56.21"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000001",
+                    "A_WIDTH": "00000000000000000000000000000111",
+                    "B_SIGNED": "00000000000000000000000000000001",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$add$sparsity_ctrl.sv:55$162",
+                  "attributes": {
+                    "src": "sparsity_ctrl.sv:55.35-56.21"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000001",
+                    "A_WIDTH": "00000000000000000000000000000111",
+                    "B_SIGNED": "00000000000000000000000000000001",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$add$sparsity_ctrl.sv:55$165",
+                  "attributes": {
+                    "src": "sparsity_ctrl.sv:55.35-56.21"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000001",
+                    "A_WIDTH": "00000000000000000000000000000111",
+                    "B_SIGNED": "00000000000000000000000000000001",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$add$sparsity_ctrl.sv:55$168",
+                  "attributes": {
+                    "src": "sparsity_ctrl.sv:55.35-56.21"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000001",
+                    "A_WIDTH": "00000000000000000000000000000111",
+                    "B_SIGNED": "00000000000000000000000000000001",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$add$sparsity_ctrl.sv:55$171",
+                  "attributes": {
+                    "src": "sparsity_ctrl.sv:55.35-56.21"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000001",
+                    "A_WIDTH": "00000000000000000000000000000111",
+                    "B_SIGNED": "00000000000000000000000000000001",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$add$sparsity_ctrl.sv:55$174",
+                  "attributes": {
+                    "src": "sparsity_ctrl.sv:55.35-56.21"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000001",
+                    "A_WIDTH": "00000000000000000000000000000111",
+                    "B_SIGNED": "00000000000000000000000000000001",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$add$sparsity_ctrl.sv:55$177",
+                  "attributes": {
+                    "src": "sparsity_ctrl.sv:55.35-56.21"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000001",
+                    "A_WIDTH": "00000000000000000000000000000111",
+                    "B_SIGNED": "00000000000000000000000000000001",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$add$sparsity_ctrl.sv:55$180",
+                  "attributes": {
+                    "src": "sparsity_ctrl.sv:55.35-56.21"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000001",
+                    "A_WIDTH": "00000000000000000000000000000111",
+                    "B_SIGNED": "00000000000000000000000000000001",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$add$sparsity_ctrl.sv:55$183",
+                  "attributes": {
+                    "src": "sparsity_ctrl.sv:55.35-56.21"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000001",
+                    "A_WIDTH": "00000000000000000000000000000111",
+                    "B_SIGNED": "00000000000000000000000000000001",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$add$sparsity_ctrl.sv:55$186",
+                  "attributes": {
+                    "src": "sparsity_ctrl.sv:55.35-56.21"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000001",
+                    "A_WIDTH": "00000000000000000000000000000111",
+                    "B_SIGNED": "00000000000000000000000000000001",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$add$sparsity_ctrl.sv:55$189",
+                  "attributes": {
+                    "src": "sparsity_ctrl.sv:55.35-56.21"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000001",
+                    "A_WIDTH": "00000000000000000000000000000111",
+                    "B_SIGNED": "00000000000000000000000000000001",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$add$sparsity_ctrl.sv:55$192",
+                  "attributes": {
+                    "src": "sparsity_ctrl.sv:55.35-56.21"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000001",
+                    "A_WIDTH": "00000000000000000000000000000111",
+                    "B_SIGNED": "00000000000000000000000000000001",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$add$sparsity_ctrl.sv:55$195",
+                  "attributes": {
+                    "src": "sparsity_ctrl.sv:55.35-56.21"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000001",
+                    "A_WIDTH": "00000000000000000000000000000111",
+                    "B_SIGNED": "00000000000000000000000000000001",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$add$sparsity_ctrl.sv:55$198",
+                  "attributes": {
+                    "src": "sparsity_ctrl.sv:55.35-56.21"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000001",
+                    "A_WIDTH": "00000000000000000000000000000111",
+                    "B_SIGNED": "00000000000000000000000000000001",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$add$sparsity_ctrl.sv:55$201",
+                  "attributes": {
+                    "src": "sparsity_ctrl.sv:55.35-56.21"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000001",
+                    "A_WIDTH": "00000000000000000000000000000111",
+                    "B_SIGNED": "00000000000000000000000000000001",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$add$sparsity_ctrl.sv:55$204",
+                  "attributes": {
+                    "src": "sparsity_ctrl.sv:55.35-56.21"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000001",
+                    "A_WIDTH": "00000000000000000000000000000111",
+                    "B_SIGNED": "00000000000000000000000000000001",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$add$sparsity_ctrl.sv:55$207",
+                  "attributes": {
+                    "src": "sparsity_ctrl.sv:55.35-56.21"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000001",
+                    "A_WIDTH": "00000000000000000000000000000111",
+                    "B_SIGNED": "00000000000000000000000000000001",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$add$sparsity_ctrl.sv:55$210",
+                  "attributes": {
+                    "src": "sparsity_ctrl.sv:55.35-56.21"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000001",
+                    "A_WIDTH": "00000000000000000000000000000111",
+                    "B_SIGNED": "00000000000000000000000000000001",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$add$sparsity_ctrl.sv:55$24",
+                  "attributes": {
+                    "src": "sparsity_ctrl.sv:55.35-56.21"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000010"
+                  }
+                },
+                {
+                  "name": "$add$sparsity_ctrl.sv:55$27",
+                  "attributes": {
+                    "src": "sparsity_ctrl.sv:55.35-56.21"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000001",
+                    "A_WIDTH": "00000000000000000000000000000111",
+                    "B_SIGNED": "00000000000000000000000000000001",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$add$sparsity_ctrl.sv:55$30",
+                  "attributes": {
+                    "src": "sparsity_ctrl.sv:55.35-56.21"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000001",
+                    "A_WIDTH": "00000000000000000000000000000111",
+                    "B_SIGNED": "00000000000000000000000000000001",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$add$sparsity_ctrl.sv:55$33",
+                  "attributes": {
+                    "src": "sparsity_ctrl.sv:55.35-56.21"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000001",
+                    "A_WIDTH": "00000000000000000000000000000111",
+                    "B_SIGNED": "00000000000000000000000000000001",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$add$sparsity_ctrl.sv:55$36",
+                  "attributes": {
+                    "src": "sparsity_ctrl.sv:55.35-56.21"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000001",
+                    "A_WIDTH": "00000000000000000000000000000111",
+                    "B_SIGNED": "00000000000000000000000000000001",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$add$sparsity_ctrl.sv:55$39",
+                  "attributes": {
+                    "src": "sparsity_ctrl.sv:55.35-56.21"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000001",
+                    "A_WIDTH": "00000000000000000000000000000111",
+                    "B_SIGNED": "00000000000000000000000000000001",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$add$sparsity_ctrl.sv:55$42",
+                  "attributes": {
+                    "src": "sparsity_ctrl.sv:55.35-56.21"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000001",
+                    "A_WIDTH": "00000000000000000000000000000111",
+                    "B_SIGNED": "00000000000000000000000000000001",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$add$sparsity_ctrl.sv:55$45",
+                  "attributes": {
+                    "src": "sparsity_ctrl.sv:55.35-56.21"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000001",
+                    "A_WIDTH": "00000000000000000000000000000111",
+                    "B_SIGNED": "00000000000000000000000000000001",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$add$sparsity_ctrl.sv:55$48",
+                  "attributes": {
+                    "src": "sparsity_ctrl.sv:55.35-56.21"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000001",
+                    "A_WIDTH": "00000000000000000000000000000111",
+                    "B_SIGNED": "00000000000000000000000000000001",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$add$sparsity_ctrl.sv:55$51",
+                  "attributes": {
+                    "src": "sparsity_ctrl.sv:55.35-56.21"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000001",
+                    "A_WIDTH": "00000000000000000000000000000111",
+                    "B_SIGNED": "00000000000000000000000000000001",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$add$sparsity_ctrl.sv:55$54",
+                  "attributes": {
+                    "src": "sparsity_ctrl.sv:55.35-56.21"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000001",
+                    "A_WIDTH": "00000000000000000000000000000111",
+                    "B_SIGNED": "00000000000000000000000000000001",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$add$sparsity_ctrl.sv:55$57",
+                  "attributes": {
+                    "src": "sparsity_ctrl.sv:55.35-56.21"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000001",
+                    "A_WIDTH": "00000000000000000000000000000111",
+                    "B_SIGNED": "00000000000000000000000000000001",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$add$sparsity_ctrl.sv:55$60",
+                  "attributes": {
+                    "src": "sparsity_ctrl.sv:55.35-56.21"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000001",
+                    "A_WIDTH": "00000000000000000000000000000111",
+                    "B_SIGNED": "00000000000000000000000000000001",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$add$sparsity_ctrl.sv:55$63",
+                  "attributes": {
+                    "src": "sparsity_ctrl.sv:55.35-56.21"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000001",
+                    "A_WIDTH": "00000000000000000000000000000111",
+                    "B_SIGNED": "00000000000000000000000000000001",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$add$sparsity_ctrl.sv:55$66",
+                  "attributes": {
+                    "src": "sparsity_ctrl.sv:55.35-56.21"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000001",
+                    "A_WIDTH": "00000000000000000000000000000111",
+                    "B_SIGNED": "00000000000000000000000000000001",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$add$sparsity_ctrl.sv:55$69",
+                  "attributes": {
+                    "src": "sparsity_ctrl.sv:55.35-56.21"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000001",
+                    "A_WIDTH": "00000000000000000000000000000111",
+                    "B_SIGNED": "00000000000000000000000000000001",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$add$sparsity_ctrl.sv:55$72",
+                  "attributes": {
+                    "src": "sparsity_ctrl.sv:55.35-56.21"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000001",
+                    "A_WIDTH": "00000000000000000000000000000111",
+                    "B_SIGNED": "00000000000000000000000000000001",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$add$sparsity_ctrl.sv:55$75",
+                  "attributes": {
+                    "src": "sparsity_ctrl.sv:55.35-56.21"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000001",
+                    "A_WIDTH": "00000000000000000000000000000111",
+                    "B_SIGNED": "00000000000000000000000000000001",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$add$sparsity_ctrl.sv:55$78",
+                  "attributes": {
+                    "src": "sparsity_ctrl.sv:55.35-56.21"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000001",
+                    "A_WIDTH": "00000000000000000000000000000111",
+                    "B_SIGNED": "00000000000000000000000000000001",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$add$sparsity_ctrl.sv:55$81",
+                  "attributes": {
+                    "src": "sparsity_ctrl.sv:55.35-56.21"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000001",
+                    "A_WIDTH": "00000000000000000000000000000111",
+                    "B_SIGNED": "00000000000000000000000000000001",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$add$sparsity_ctrl.sv:55$84",
+                  "attributes": {
+                    "src": "sparsity_ctrl.sv:55.35-56.21"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000001",
+                    "A_WIDTH": "00000000000000000000000000000111",
+                    "B_SIGNED": "00000000000000000000000000000001",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$add$sparsity_ctrl.sv:55$87",
+                  "attributes": {
+                    "src": "sparsity_ctrl.sv:55.35-56.21"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000001",
+                    "A_WIDTH": "00000000000000000000000000000111",
+                    "B_SIGNED": "00000000000000000000000000000001",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$add$sparsity_ctrl.sv:55$90",
+                  "attributes": {
+                    "src": "sparsity_ctrl.sv:55.35-56.21"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000001",
+                    "A_WIDTH": "00000000000000000000000000000111",
+                    "B_SIGNED": "00000000000000000000000000000001",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$add$sparsity_ctrl.sv:55$93",
+                  "attributes": {
+                    "src": "sparsity_ctrl.sv:55.35-56.21"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000001",
+                    "A_WIDTH": "00000000000000000000000000000111",
+                    "B_SIGNED": "00000000000000000000000000000001",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$add$sparsity_ctrl.sv:55$96",
+                  "attributes": {
+                    "src": "sparsity_ctrl.sv:55.35-56.21"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000001",
+                    "A_WIDTH": "00000000000000000000000000000111",
+                    "B_SIGNED": "00000000000000000000000000000001",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000111"
+                  }
+                },
+                {
+                  "name": "$add$sparsity_ctrl.sv:55$99",
+                  "attributes": {
+                    "src": "sparsity_ctrl.sv:55.35-56.21"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000001",
+                    "A_WIDTH": "00000000000000000000000000000111",
+                    "B_SIGNED": "00000000000000000000000000000001",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000111"
+                  }
+                }
+            ]
+          }
+        ],
+        "attributes": {
+            "dynports": "00000000000000000000000000000001",
+            "hdlname": "sparsity_ctrl",
+            "src": "sparsity_ctrl.sv:20.1-62.26"
+        }
+      }
+  ]
+}

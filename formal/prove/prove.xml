@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+<testsuite timestamp="2026-07-25T14:48:39" hostname="aanish-VMware-Virtual-Platform" package="prove" id="0" name="default" tests="3" errors="0" failures="0" time="8" skipped="0">
+<properties>
+<property name="os" value="Linux"/>
+<property name="expect" value="PASS"/>
+<property name="status" value="PASS"/>
+</properties>
+<testcase classname="default" name="build execution" time="0">
+</testcase>
+<testcase classname="default" name="Property ASSERT in sparseflow_props at sparseflow_props.sv:27.9-27.34" time="0" type="ASSERT" location="sparseflow_props.sv:27.9-27.34" id="_witness_.check_assert_sparseflow_props_sv_27_7">
+</testcase>
+<testcase classname="default" name="Property ASSERT in sparseflow_props at sparseflow_props.sv:29.9-29.29" time="0" type="ASSERT" location="sparseflow_props.sv:29.9-29.29" id="_witness_.check_assert_sparseflow_props_sv_29_10">
+</testcase>
+<testcase classname="default" name="Property ASSERT in sparseflow_props at sparseflow_props.sv:30.7-30.32" time="0" type="ASSERT" location="sparseflow_props.sv:30.7-30.32" id="_witness_.check_assert_sparseflow_props_sv_30_12">
+</testcase>
+<system-out>SBY 14:48:30 [formal/prove] Removing directory '/home/aanish/SparseFlow/formal/prove'.
+SBY 14:48:30 [formal/prove] Copy '/home/aanish/SparseFlow/rtl/sparseflow_pkg.sv' to '/home/aanish/SparseFlow/formal/prove/src/sparseflow_pkg.sv'.
+SBY 14:48:30 [formal/prove] Copy '/home/aanish/SparseFlow/rtl/sparsity_ctrl.sv' to '/home/aanish/SparseFlow/formal/prove/src/sparsity_ctrl.sv'.
+SBY 14:48:30 [formal/prove] Copy '/home/aanish/SparseFlow/formal/sparseflow_props.sv' to '/home/aanish/SparseFlow/formal/prove/src/sparseflow_props.sv'.
+SBY 14:48:30 [formal/prove] engine_0: smtbmc z3
+SBY 14:48:30 [formal/prove] base: starting process &quot;cd formal/prove/src; yosys -ql ../model/design.log ../model/design.ys&quot;
+SBY 14:48:31 [formal/prove] base: finished (returncode=0)
+SBY 14:48:31 [formal/prove] prep: starting process &quot;cd formal/prove/model; yosys -ql design_prep.log design_prep.ys&quot;
+SBY 14:48:31 [formal/prove] prep: finished (returncode=0)
+SBY 14:48:31 [formal/prove] smt2: starting process &quot;cd formal/prove/model; yosys -ql design_smt2.log design_smt2.ys&quot;
+SBY 14:48:31 [formal/prove] smt2: finished (returncode=0)
+SBY 14:48:31 [formal/prove] engine_0: starting process &quot;cd formal/prove; yosys-smtbmc -s z3 --presat --noprogress -t 10  --append 0 --dump-vcd engine_0/trace.vcd --dump-yw engine_0/trace.yw --dump-vlogtb engine_0/trace_tb.v --dump-smtc engine_0/trace.smtc model/design_smt2.smt2&quot;
+SBY 14:48:31 [formal/prove] engine_0: ##   0:00:00  Solver: z3
+SBY 14:48:31 [formal/prove] engine_0: ##   0:00:00  Checking assumptions in step 0..
+SBY 14:48:31 [formal/prove] engine_0: ##   0:00:00  Checking assertions in step 0..
+SBY 14:48:31 [formal/prove] engine_0: ##   0:00:00  Checking assumptions in step 1..
+SBY 14:48:31 [formal/prove] engine_0: ##   0:00:00  Checking assertions in step 1..
+SBY 14:48:31 [formal/prove] engine_0: ##   0:00:00  Checking assumptions in step 2..
+SBY 14:48:31 [formal/prove] engine_0: ##   0:00:00  Checking assertions in step 2..
+SBY 14:48:32 [formal/prove] engine_0: ##   0:00:01  Checking assumptions in step 3..
+SBY 14:48:32 [formal/prove] engine_0: ##   0:00:01  Checking assertions in step 3..
+SBY 14:48:33 [formal/prove] engine_0: ##   0:00:01  Checking assumptions in step 4..
+SBY 14:48:33 [formal/prove] engine_0: ##   0:00:02  Checking assertions in step 4..
+SBY 14:48:33 [formal/prove] engine_0: ##   0:00:02  Checking assumptions in step 5..
+SBY 14:48:34 [formal/prove] engine_0: ##   0:00:02  Checking assertions in step 5..
+SBY 14:48:35 [formal/prove] engine_0: ##   0:00:03  Checking assumptions in step 6..
+SBY 14:48:35 [formal/prove] engine_0: ##   0:00:04  Checking assertions in step 6..
+SBY 14:48:36 [formal/prove] engine_0: ##   0:00:04  Checking assumptions in step 7..
+SBY 14:48:36 [formal/prove] engine_0: ##   0:00:05  Checking assertions in step 7..
+SBY 14:48:37 [formal/prove] engine_0: ##   0:00:06  Checking assumptions in step 8..
+SBY 14:48:37 [formal/prove] engine_0: ##   0:00:06  Checking assertions in step 8..
+SBY 14:48:38 [formal/prove] engine_0: ##   0:00:07  Checking assumptions in step 9..
+SBY 14:48:38 [formal/prove] engine_0: ##   0:00:07  Checking assertions in step 9..
+SBY 14:48:39 [formal/prove] engine_0: ##   0:00:08  Status: passed
+SBY 14:48:39 [formal/prove] engine_0: finished (returncode=0)
+SBY 14:48:39 [formal/prove] engine_0: Status returned by engine: pass
+SBY 14:48:39 [formal/prove] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:08 (8)
+SBY 14:48:39 [formal/prove] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:08 (8)
+SBY 14:48:39 [formal/prove] summary: engine_0 (smtbmc z3) returned pass
+SBY 14:48:39 [formal/prove] summary: engine_0 did not produce any traces
+SBY 14:48:39 [formal/prove] DONE (PASS, rc=0)
+</system-out>
+<system-err>
+</system-err>
+</testsuite>
+</testsuites>
