@@ -47,7 +47,7 @@ proportionally to sparsity.
 - [x] Week 4 — Scoreboard + coverage closure
 - [x] Week 5 — Formal verification
 - [x] Week 6 — Synthesis + static timing
-- [ ] Week 7 — Place and route to GDS2
+- [x] Week 7 — Place and route to GDS2
 - [ ] Week 8 — Sign-off + benchmarks + report
 
 ## Repository structure
