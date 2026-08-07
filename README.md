@@ -150,7 +150,7 @@ Coverage groups defined in `tb/uvm/sparseflow_coverage.sv`:
 
 ## Final GDS2 Layout
 
-![SparseFlow GDS2 Layout](results/sparseflow_layout.png)
+![SparseFlow GDS2 Layout](results/sparseflow_finalgds_layout.png)
 
 ### Place & Route Results (Week 7)
 
