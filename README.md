@@ -48,7 +48,7 @@ proportionally to sparsity.
 - [x] Week 5 — Formal verification
 - [x] Week 6 — Synthesis + static timing
 - [x] Week 7 — Place and route to GDS2
-- [ ] Week 8 — Sign-off + benchmarks + report
+- [x] Week 8 — Sign-off + benchmarks + report(SparseFlow RTL-to-GDS2 project completed)
 
 ## Repository structure
 
@@ -147,3 +147,34 @@ Coverage groups defined in `tb/uvm/sparseflow_coverage.sv`:
 
 ### Top cell types
 ![Synthesis Chart](results/synthesis_chart.png)
+
+## Final GDS2 Layout
+
+![SparseFlow GDS2 Layout](results/sparseflow_layout.png)
+
+### Place & Route Results (Week 7)
+
+**Tool:** OpenROAD 26Q3 | **PDK:** Nangate 45nm FreePDK
+
+| Metric | Value |
+|--------|-------|
+| Design area | 54,436 µm² |
+| Core utilization | 43% |
+| Total cells | 58,837 |
+| Sequential cells | 6,671 |
+| Clock buffers | 1,595 |
+| Total power | 25.7 mW |
+| IR drop worst case | 3.16% |
+| Routing segments | 186,673 |
+
+### Complete Flow Summary
+
+| Stage | Tool | Result |
+|-------|------|--------|
+| RTL Design | Vivado/SystemVerilog | 5 modules, 3 bugs found and fixed |
+| Simulation | Vivado XSim | PASS: reg_result=35 verified |
+| UVM | Vivado XSim UVM 1.2 | Full environment written |
+| Formal | SymbiYosys + Z3 | PASS: 3 properties proved |
+| Synthesis | Yosys 0.64 | 20,917 cells, 50,650 µm² |
+| Place & Route | OpenROAD 26Q3 | DRC clean, 54,436 µm² |
+| GDS2 | KLayout 0.30.7 | Real chip layout generated |
