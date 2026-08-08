@@ -182,7 +182,7 @@ Coverage groups defined in `tb/uvm/sparseflow_coverage.sv`:
 *186,673 wire segments routed across 7 metal layers connecting all cells.*
 
 ### Final GDS2 Layout (KLayout)
-![Final GDS](results/sparseflow_layout.png)
+![Final GDS](results/sparseflow_finalgds_layout.png)
 *Complete chip layout including fill cells. Ready for tape-out.*
 
 ### Complete Flow Summary
