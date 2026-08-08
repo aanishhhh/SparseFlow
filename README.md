@@ -167,6 +167,24 @@ Coverage groups defined in `tb/uvm/sparseflow_coverage.sv`:
 | IR drop worst case | 3.16% |
 | Routing segments | 186,673 |
 
+## Physical Design Flow — Stage by Stage
+
+### Stage 2: Floorplan
+![Floorplan](results/flow_stages/stage2_floorplan.png)
+*Empty die boundary defined. Chip area: 54,436 µm². I/O pins placed around perimeter.*
+
+### Stage 3: Cell Placement  
+![Placement](results/flow_stages/stage3_placement.png)
+*All 20,917 standard cells placed in rows at 43% utilization. No routing yet.*
+
+### Stage 5: Routing Complete
+![Routing](results/flow_stages/stage5_routing.png)
+*186,673 wire segments routed across 7 metal layers connecting all cells.*
+
+### Final GDS2 Layout (KLayout)
+![Final GDS](results/sparseflow_layout.png)
+*Complete chip layout including fill cells. Ready for tape-out.*
+
 ### Complete Flow Summary
 
 | Stage | Tool | Result |
